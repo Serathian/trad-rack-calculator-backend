@@ -1,3 +1,81 @@
 type Query {
   helloWorld: String!
+  allPassivePro: [PassivePro!]!
+  allPassiveProSets: [PassiveProSet!]!
+  allActivePro: [ActivePro!]!
+  allActiveProSets: [ActiveProSet!]!
+  allClimbers: [Climber!]!
+}
+
+type PassivePro {
+  id: ID!
+  brand: String!
+  series: String!
+  displayName: String!
+  color: String!
+  size: Int!
+  range: Range!
+}
+
+type PassiveProSet {
+  id: ID!
+  brand: String!
+  series: String!
+  displayName: String!
+  color: String!
+  sizeRange: SizeRange!
+  size: Float!
+  contents: [PassivePro!]!
+}
+
+type ActivePro {
+  id: ID!
+  brand: String!
+  series: String!
+  displayName: String!
+  color: String!
+  size: Float!
+  range: Range!
+}
+
+type ActiveProSet {
+  id: ID!
+  brand: String!
+  series: String!
+  displayName: String!
+  color: String!
+  sizeRange: SizeRange!
+  size: Float!
+  contents: [ActivePro!]!
+}
+
+type Climber {
+  id: ID!
+  name: String!
+  rack: Rack!
+}
+
+type SizeRange {
+  min: Float!
+  max: Float!
+}
+
+type Range {
+  min: Float!
+  max: Float!
+}
+
+type Rack {
+  active: Active
+  passive: Passive
+}
+
+type Active {
+  sets: [ActiveProSet]!
+  singles: [ActivePro]!
+}
+
+type Passive {
+  sets: [PassiveProSet]!
+  singles: [PassivePro]!
 }

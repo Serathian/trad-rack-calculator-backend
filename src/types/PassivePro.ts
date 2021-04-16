@@ -1,11 +1,23 @@
-import { Color, Range } from './utilityTypes'
+import { Color, Range, SizeRange } from "./utilityTypes";
 
 export interface PassivePro {
-  id: string
-  brand: string
-  series: string
-  displayname: string
-  color: Color
-  size: number
-  range: Range
+  id: string;
+  brand: string;
+  series: string;
+  displayName: string;
+  color: Color;
+  size: number;
+  range: Range;
 }
+
+export interface PassiveProSet {
+  id: string;
+  brand: string;
+  series: string;
+  displayName: string;
+  color: Color;
+  sizeRange: SizeRange;
+  contents: PassiveProSetContents;
+}
+
+export type PassiveProSetContents = Array<PassivePro> | Array<string>;
