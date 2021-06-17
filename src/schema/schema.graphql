@@ -5,6 +5,12 @@ type Query {
   allActivePro: [ActivePro!]!
   allActiveProSets: [ActiveProSet!]!
   allClimbers: [Climber!]!
+  dataArray: [Data]!
+}
+
+type Data {
+  size: Int!
+  count: Int!
 }
 
 type PassivePro {
